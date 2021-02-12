@@ -59,7 +59,7 @@
 #
 
 # This defines the board to compile for (see boards.h for your board's ID)
-HARDWARE_MOTHERBOARD ?= 1020
+HARDWARE_MOTHERBOARD ?= 1124
 
 ifeq ($(OS),Windows_NT)
   # Windows
@@ -83,7 +83,7 @@ endif
 # Arduino source install directory, and version number
 # On most linuxes this will be /usr/share/arduino
 ARDUINO_INSTALL_DIR  ?= ${HOME}/Arduino
-ARDUINO_VERSION      ?= 106
+ARDUINO_VERSION      ?= 1813
 
 # The installed Libraries are in the User folder
 ARDUINO_USER_DIR ?= ${HOME}/Arduino
@@ -96,7 +96,7 @@ AVR_TOOLS_PATH ?=
 UPLOAD_RATE        ?= 57600
 AVRDUDE_PROGRAMMER ?= arduino
 # On most linuxes this will be /dev/ttyACM0 or /dev/ttyACM1
-UPLOAD_PORT        ?= /dev/ttyUSB0
+UPLOAD_PORT        ?= /dev/ttyACM0
 
 # Directory used to build files in, contains all the build files, from object
 # files to the final hex file on linux it is best to put an absolute path
@@ -114,7 +114,7 @@ WIRE               ?= 0
 TONE               ?= 1
 
 # This defines if U8GLIB is needed (may require RELOC_WORKAROUND)
-U8GLIB             ?= 0
+U8GLIB             ?= 1
 
 # This defines whether to include the Trinamic TMCStepper library
 TMC                ?= 0
@@ -720,7 +720,7 @@ ifeq ($(U8GLIB), 1)
   LIB_CXXSRC += U8glib.cpp
   LIB_SRC += u8g_ll_api.c u8g_bitmap.c u8g_clip.c u8g_com_null.c u8g_delay.c \
     u8g_page.c u8g_pb.c u8g_pb16h1.c u8g_rect.c u8g_state.c u8g_font.c \
-    u8g_font_6x13.c u8g_font_04b_03.c u8g_font_5x8.c
+    u8g_font_6x13.c u8g_font_04b_03.c u8g_font_5x8.c u8g_dev_ssd1309_128x64.c u8g_com_arduino_ssd_i2c.c u8g_pb8v1.c u8g_com_i2c.c u8g_com_api.c
 endif
 
 ifeq ($(TMC), 1)

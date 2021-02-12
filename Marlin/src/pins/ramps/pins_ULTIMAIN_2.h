@@ -102,6 +102,10 @@
   #define E0_AUTO_FAN_PIN                     77
 #endif
 
+#ifndef E1_AUTO_FAN_PIN
+  #define E1_AUTO_FAN_PIN                     77
+#endif
+
 //
 // Misc. Functions
 //
